@@ -1,3 +1,4 @@
+
 #include<SoftwareSerial.h>
 #include<Servo.h>
 #include<Arduino.h>
@@ -17,7 +18,6 @@ int state=-1;
 #define Led 11
 
 void setup() {
-  // put your setup code here, to run once:
 
   servo.attach(servoPin); 
   servo.write(0);
@@ -84,7 +84,6 @@ void Stop(){
 }
 
 void loop() {
-//   put your main code here, to run repeatedly:
 
   if(Serial.available()>0){
     state=Serial.read();
