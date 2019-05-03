@@ -43,7 +43,7 @@ void forwardMotion(){
   digitalWrite(In22,HIGH);
 }
 
-void backwardMotion(){
+void backwardMotion(){ 
   
   analogWrite(ENA,255);
   analogWrite(ENB,255);
