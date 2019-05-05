@@ -111,21 +111,25 @@ void loop() {
 
     srg1+=5;
     servo1.write(srg1);
+    state=-1;
   }
   else if(state=='7'){  // Servo 1 Free
 
     srg1-=5;
     servo1.write(srg1);
+    state=-1;
   }
   else if(state=='8'){  // Servo 2 Grab
 
     srg2+=5;
     servo2.write(srg2);
+    state=-1;
   }
   else if(state=='9'){   // Servo 2 Free
 
     srg2-=5;
     servo2.write(srg2);
+    state=-1;
   }
     
       // lev++;
