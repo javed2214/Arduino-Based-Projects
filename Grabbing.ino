@@ -24,7 +24,7 @@ void setup() {
   servo1.attach(servoPin1);
   servo2.attach(servoPin2);
   servo1.write(0);
-  servo2.write(130);
+  servo2.write(0);
   
   pinMode(ENA,OUTPUT);
   pinMode(ENB,OUTPUT);
