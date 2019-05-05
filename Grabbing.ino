@@ -117,7 +117,7 @@ void loop() {
     srg1-=5;
     servo1.write(srg1);
   }
-  else if(state==-'8'){  // Servo 2 Grab
+  else if(state=='8'){  // Servo 2 Grab
 
     srg2+=5;
     servo2.write(srg2);
