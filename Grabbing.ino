@@ -15,6 +15,8 @@ Servo servo1, servo2;
 int angle1 = 0, angle2 = 0;
 static int lev=0;
 
+int srg1=0,srg2=0;
+
 int state=-1;
 
 void setup() {
@@ -30,7 +32,7 @@ void setup() {
   pinMode(In12,OUTPUT);
   pinMode(In21,OUTPUT);
   pinMode(In22,OUTPUT);
-//  pinMode(Led,OUTPUT);
+
   
   Serial.begin(9600);
 }
@@ -105,29 +107,47 @@ void loop() {
   else if(state=='5'){
     Stop();
   }
-  else if(state=='6'){
+  else if(state=='6'){    // Servo 1 Grab
+
+    srg1+=5;
+    servo1.write(srg1);
+  }
+  else if(state=='7'){  // Servo 1 Free
+
+    srg1-=5;
+    servo1.write(srg1);
+  }
+  else if(state==-'8'){  // Servo 2 Grab
+
+    srg2+=5;
+    servo2.write(srg2);
+  }
+  else if(state=='9'){   // Servo 2 Free
+
+    srg2-=5;
+    servo2.write(srg2);
+  }
     
-      lev++;
-      if(lev%2!=0){
+      // lev++;
+      // if(lev%2!=0){
               
-              for(angle1 = 0, angle2 = 130; angle1 <= 130, angle2 >=0; angle1++, angle2--)  
-              {                                  
-                servo1.write(angle1);
-                servo2.write(angle2);               
-                delay(5);                   
-              } 
-          }
-          else{
-                  for(angle1 = 130, angle2 = 0; angle1 >=0, angle2 >=130; angle1--, angle2++)  
-                  {                                  
-                    servo1.write(angle1);
-                    servo2.write(angle2);               
-                    delay(5);                   
-                  }  
-              }
+      //         for(angle1 = 0, angle2 = 130; angle1 <= 130, angle2 >=0; angle1++, angl2--)  
+      //         {                                  
+      //           servo1.write(angle1);
+      //           servo2.write(angle2);               
+      //           delay(5);                   
+      //         } 
+      //     }
+      //     else{
+      //             for(angle1 = 130, angle2 = 0; angle1 >=0, angle2 >=130; angle--, angle2--)  
+      //             {                                  
+      //               servo1.write(angle1);
+      //               servo2.write(angle2);               
+      //               delay(5);                   
+      //             }  
+      //         }
             
-          if(lev%2!=0) servo1.write(130), servo2.write(0);               
-          else servo1.write(0), servo2.write(130);
-          state='5';
+      //     if(lev%2!=0) servo1.write(130), servo2.write(0);               
+      //     else servo1.write(0), servo2.write(130);
+      //     state='5';
      }
-}
