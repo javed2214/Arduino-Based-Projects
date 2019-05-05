@@ -15,7 +15,7 @@ Servo servo1, servo2;
 int angle1 = 0, angle2 = 0;
 static int lev=0;
 
-int srg1=0,srg2=0;
+static int srg1=0,srg2=0;
 
 int state=-1;
 
